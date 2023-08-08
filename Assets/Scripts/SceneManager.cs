@@ -1,32 +1,40 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 namespace KID
 {
     /// <summary>
-    /// ³õ´ººŞ²z¾¹¡G¤Á´«³õ´º»P°h¥X¹CÀ¸
+    /// å ´æ™¯ç®¡ç†å™¨ï¼šåˆ‡æ›å ´æ™¯èˆ‡é€€å‡ºéŠæˆ²
     /// </summary>
     public class SceneManager : MonoBehaviour
     {
-        [SerializeField, Range(0.3f, 3), Header("­µ®Ä®É¶¡")]
+        [SerializeField, Range(0.3f, 3), Header("éŸ³æ•ˆæ™‚é–“")]
         private float soundDuration = 2.2f;
 
-        // «ö¶s»Pµ{¦¡·¾³qªº¤è¦¡
-        // 1. ©w¸q¤½¶}¤èªk
-        // 2. ¦¹¸}¥»±¾¦b¹CÀ¸ª«¥ó¤W
-        // 3. «ö¶s¤W³]©w On Click ¨Æ¥ó
+        private string nameSceneToChange;
+
+        // æŒ‰éˆ•èˆ‡ç¨‹å¼æºé€šçš„æ–¹å¼
+        // 1. å®šç¾©å…¬é–‹æ–¹æ³•
+        // 2. æ­¤è…³æœ¬æ›åœ¨éŠæˆ²ç‰©ä»¶ä¸Š
+        // 3. æŒ‰éˆ•ä¸Šè¨­å®š On Click äº‹ä»¶
 
         /// <summary>
-        /// ³z¹L¦r¦ê¤Á´«³õ´º
+        /// é€éå­—ä¸²åˆ‡æ›å ´æ™¯
         /// </summary>
-        /// <param name="nameScene">³õ´º¦WºÙ</param>
+        /// <param name="nameScene">å ´æ™¯åç¨±</param>
         public void ChangeScene(string nameScene)
         {
-            // print("¤Á´«³õ´º");
-            UnityEngine.SceneManagement.SceneManager.LoadScene(nameScene);
+            nameSceneToChange = nameScene;
+            Invoke("DelayChangeScene", soundDuration);
+        }
+
+        private void DelayChangeScene()
+        {
+            // print("åˆ‡æ›å ´æ™¯");
+            UnityEngine.SceneManagement.SceneManager.LoadScene(nameSceneToChange);
         }
 
         /// <summary>
-        /// °h¥X¹CÀ¸
+        /// é€€å‡ºéŠæˆ²
         /// </summary>
         public void Quit()
         {
@@ -35,7 +43,7 @@ namespace KID
 
         private void DelayQuit()
         {
-            print("°h¥X¹CÀ¸");
+            // print("é€€å‡ºéŠæˆ²");
             Application.Quit();
         }
     }
