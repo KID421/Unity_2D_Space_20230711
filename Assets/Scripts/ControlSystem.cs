@@ -7,6 +7,7 @@ namespace KID.TwoD
     /// </summary>
     public class ControlSystem : MonoBehaviour
     {
+        #region 資料
         [SerializeField, Header("移動速度"), Range(0, 50)]
         private float moveSpeed = 3.5f;
         [SerializeField, Header("檢查地板尺寸")]
@@ -22,7 +23,9 @@ namespace KID.TwoD
         private Animator ani;
         private string parRun = "開關跑步";
         private string parJump = "開關跳躍";
+        #endregion
 
+        #region 事件
         private void OnDrawGizmos()
         {
             Gizmos.color = new Color(1, 0, 0.3f, 0.5f);
@@ -45,7 +48,9 @@ namespace KID.TwoD
             MoveAndFlip();
             Jump();
         }
+        #endregion
 
+        #region 方法
         /// <summary>
         /// 移動與翻面
         /// </summary>
@@ -86,9 +91,10 @@ namespace KID.TwoD
         private bool CheckGround()
         {
             Collider2D hit = Physics2D.OverlapBox(transform.position + v3CheckGroundOffset, v3CheckGroundSize, 0, layerCheckGround);
-            
+
             ani.SetBool(parJump, !hit);
             return hit;
-        }
+        } 
+        #endregion
     }
 }
