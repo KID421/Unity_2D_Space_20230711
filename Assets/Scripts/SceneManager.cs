@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace KID
+namespace KID.SceneManager
 {
     /// <summary>
     /// 場景管理器：切換場景與退出遊戲
