@@ -943,6 +943,11 @@ MonoBehaviour:
   attackCheckHitTime: 0.8
   attackFinishTime: 1.5
   stateTrack: {fileID: 261586910}
+  attackHitSize: {x: 3, y: 3, z: 1}
+  attackHitOffset: {x: 2.5, y: -0.5, z: 0}
+  attackLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &261586910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14289,7 +14294,7 @@ Transform:
   m_GameObject: {fileID: 1722035242}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4340341, y: 2.5999994, z: -10}
+  m_LocalPosition: {x: 1.4301469, y: 2.5999994, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
