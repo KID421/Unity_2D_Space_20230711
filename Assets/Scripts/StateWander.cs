@@ -16,7 +16,7 @@ namespace KID.TwoD
         /// <summary>
         /// 方向：右邊 +1，左邊 -1
         /// </summary>
-        private int direction = 1;
+        public int direction = 1;
 
         private Vector3 pointLeft => pointOriginal + Vector3.right * offsetLeft;
         private Vector3 pointRight => pointOriginal + Vector3.right * offsetRight;
@@ -30,6 +30,16 @@ namespace KID.TwoD
         private bool startIdle;
         [SerializeField, Header("等待狀態的隨機時間範圍")]
         private Vector2 rangeWanderTime = new Vector2(0, 10);
+        [SerializeField, Header("等追蹤狀態")]
+        private StateTrack stateTrack;
+
+        [Header("追蹤大小與位移")]
+        [SerializeField]
+        private Vector3 trackSize = Vector3.one;
+        [SerializeField]
+        private Vector3 trackOffset;
+        [SerializeField]
+        private LayerMask trackLayer;
 
         private float timeWander;
         private float timer;
@@ -39,6 +49,9 @@ namespace KID.TwoD
             Gizmos.color = new Color(1, 0.8f, 0.1f, 0.5f);
             Gizmos.DrawSphere(pointLeft, 0.1f);
             Gizmos.DrawSphere(pointRight, 0.1f);
+
+            Gizmos.color = new Color(1, 0.3f, 0.6f, 0.5f);
+            Gizmos.DrawCube(transform.position + transform.TransformDirection(trackOffset), trackSize);
         }
 
         private void Start()
@@ -68,14 +81,40 @@ namespace KID.TwoD
 
             if (timer >= timeWander) startIdle = true;
 
-            if (startIdle)
+            if (TrackTarget())
             {
+                print("追蹤");
+                ResetState();
+                return stateTrack;
+            }
+            else if (startIdle)
+            {
+                ResetState();
                 return stateIdle;
             }
             else
             {
                 return this;
             }
+        }
+
+        private void ResetState()
+        {
+            timer = 0;
+            startIdle = false;
+            timeWander = Random.Range(rangeWanderTime.x, rangeWanderTime.y);
+            rig.velocity = Vector3.zero;
+        }
+
+        public bool TrackTarget()
+        {
+            Collider2D hit = Physics2D.OverlapBox(transform.position + transform.TransformDirection(trackOffset), trackSize, 0, trackLayer);
+            
+            if (!hit) return false;
+
+            if (hit.transform.position.x > pointLeft.x && hit.transform.position.x < pointRight.x) return hit;
+
+            return false;
         }
 
         [ContextMenu("取得角色原始座標")]
