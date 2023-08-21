@@ -11,27 +11,9 @@ namespace KID.TwoD
         private float attackFinishTime = 4;
         [SerializeField, Header("追蹤狀態")]
         private StateTrack stateTrack;
-        [Header("檢查攻擊擊中區域大小與位移")]
-        [SerializeField]
-        private Vector3 attackHitSize = Vector3.one;
-        [SerializeField]
-        private Vector3 attackHitOffset;
-        [SerializeField]
-        private LayerMask attackLayer;
 
         private string parAttack = "觸發攻擊";
         private float timer;
-
-        private void OnDrawGizmos()
-        {
-            //Gizmos.color = new Color(1, 0.9f, 0.6f, 0.5f);
-            //Gizmos.DrawCube(transform.position + transform.TransformDirection(attackHitOffset), attackHitSize);
-        }
-
-        private void Start()
-        {
-
-        }
 
         public override State RunCurrentState()
         {
