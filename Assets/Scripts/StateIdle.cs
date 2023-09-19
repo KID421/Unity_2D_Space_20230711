@@ -2,6 +2,9 @@
 
 namespace KID.TwoD
 {
+    /// <summary>
+    /// 等待狀態：可以進入遊走與追蹤狀態
+    /// </summary>
     public class StateIdle : State
     {
         [SerializeField, Header("遊走狀態")]
@@ -10,6 +13,8 @@ namespace KID.TwoD
         private bool startWander;
         [SerializeField, Header("等待狀態的隨機時間範圍")]
         private Vector2 rangeIdleTime = new Vector2(0, 3);
+        [SerializeField, Header("追蹤狀態")]
+        private StateTrack stateTrack;
 
         private float timeIdle;
         private float timer;
@@ -27,14 +32,30 @@ namespace KID.TwoD
 
             if (timer >= timeIdle) startWander = true;
 
-            if (startWander)
+            if (stateWander.TrackTarget())
             {
+                ResetState();
+                return stateTrack;
+            }
+            else if (startWander)
+            {
+                ResetState();
                 return stateWander;
             }
             else
             {
                 return this;
             }
+        }
+
+        /// <summary>
+        /// 重設狀態資料
+        /// </summary>
+        private void ResetState()
+        {
+            timer = 0;
+            startWander = false;
+            timeIdle = Random.Range(rangeIdleTime.x, rangeIdleTime.y);
         }
     }
 }

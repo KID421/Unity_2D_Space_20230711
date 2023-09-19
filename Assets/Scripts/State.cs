@@ -18,6 +18,9 @@ namespace KID.TwoD
         /// </summary>
         protected Animator ani { get; private set; }
 
+        [field:SerializeField, Header("目標圖層")]
+        protected LayerMask layerTarget { get; private set; }
+
         private void Awake()
         {
             ani = GetComponent<Animator>();
