@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 namespace KID
 {
@@ -7,6 +8,7 @@ namespace KID
     /// </summary>
     public class DamagePlayer : DamageSystem
     {
-
+        [SerializeField, Header("血條")]
+        private Image imgHp;
     }
 }
