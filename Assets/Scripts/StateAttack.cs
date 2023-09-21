@@ -62,6 +62,7 @@ namespace KID.TwoD
         public void ResetAttackState()
         {
             timer = 0;
+            canSendAttack = true;
         }
     }
 }

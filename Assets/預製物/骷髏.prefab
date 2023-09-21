@@ -40,7 +40,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1121896909639126666
 SpriteRenderer:
@@ -211,9 +211,9 @@ MonoBehaviour:
   <layerTarget>k__BackingField:
     serializedVersion: 2
     m_Bits: 64
-  pointOriginal: {x: 21, y: 1, z: 0}
-  offsetLeft: -8
-  offsetRight: 3
+  pointOriginal: {x: 100, y: 0, z: 0}
+  offsetLeft: -10
+  offsetRight: 13
   speed: 1.5
   direction: 1
   stateIdle: {fileID: 1974414663042566086}
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 6cd8dd727be6d644197373078271c523, type: 2}
-  prefabDamage: {fileID: 5632999884889584716, guid: 237cfbda92883cd4781962ebd20cd01d, type: 3}
+  prefabDamage: {fileID: 1380679279412081404, guid: 237cfbda92883cd4781962ebd20cd01d, type: 3}
   stateManager: {fileID: 4279674568511011701}
   stateHit: {fileID: 8731104761890922592}
   prefabItem: {fileID: 6335225383663594836, guid: 29838af8a8dd2a54a9f8bad821365105, type: 3}

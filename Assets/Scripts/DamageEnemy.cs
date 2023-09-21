@@ -1,4 +1,5 @@
-﻿using KID.TwoD;
+﻿using Cinemachine;
+using KID.TwoD;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,12 +22,14 @@ namespace KID
         private string parDead = "開關死亡";
         private Rigidbody2D rig;
         private Collider2D col;
+        private CinemachineImpulseSource impulseSource;
 
         private void Start()
         {
             ani = GetComponent<Animator>();
             rig = GetComponent<Rigidbody2D>();
             col = GetComponent<Collider2D>();
+            impulseSource = FindObjectOfType<CinemachineImpulseSource>();
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -41,6 +44,7 @@ namespace KID
                 stateManager.stateDefault = stateHit;
                 AudioClip sound = SoundManager.instance.soundEnemyHit;
                 SoundManager.instance.PlaySound(sound, 0.7f, 1.7f);
+                impulseSource.GenerateImpulse();
             }
         }
 

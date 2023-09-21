@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 526899608470987455, guid: 64d7a71737f3d9a499f82819573cef65, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 526899608470987455, guid: 64d7a71737f3d9a499f82819573cef65, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62,11 +62,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1815637447254634328, guid: 64d7a71737f3d9a499f82819573cef65, type: 3}
       propertyPath: offsetLeft
-      value: -6
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 1815637447254634328, guid: 64d7a71737f3d9a499f82819573cef65, type: 3}
       propertyPath: offsetRight
-      value: 8
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1815637447254634328, guid: 64d7a71737f3d9a499f82819573cef65, type: 3}
       propertyPath: pointOriginal.x
@@ -84,6 +84,10 @@ PrefabInstance:
       propertyPath: data
       value: 
       objectReference: {fileID: 11400000, guid: b594b41cba3787049b61dc6c80c3badc, type: 2}
+    - target: {fileID: 5022536672559499861, guid: 64d7a71737f3d9a499f82819573cef65, type: 3}
+      propertyPath: prefabDamage
+      value: 
+      objectReference: {fileID: 1380679279412081404, guid: 237cfbda92883cd4781962ebd20cd01d, type: 3}
     - target: {fileID: 5801084642709641732, guid: 64d7a71737f3d9a499f82819573cef65, type: 3}
       propertyPath: m_Name
       value: "\u4F2F\u6069 Variant"
