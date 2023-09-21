@@ -37,6 +37,9 @@ namespace KID.TwoD
                 ani.SetTrigger(parFire);
                 GameObject tempBullet = Instantiate(prefabBullet, pointBullet.position, transform.rotation);
                 tempBullet.GetComponent<Rigidbody2D>().AddForce(-transform.right * powerBullet);
+
+                AudioClip sound = SoundManager.instance.soundFire;
+                SoundManager.instance.PlaySound(sound, 0.7f, 1.7f);
             }
         }
     }

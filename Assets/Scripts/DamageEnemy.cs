@@ -39,6 +39,8 @@ namespace KID
                 Damage(bulletAttack);
                 Destroy(collision.gameObject);
                 stateManager.stateDefault = stateHit;
+                AudioClip sound = SoundManager.instance.soundEnemyHit;
+                SoundManager.instance.PlaySound(sound, 0.7f, 1.7f);
             }
         }
 
@@ -51,6 +53,8 @@ namespace KID
             rig.velocity = Vector3.zero;
             GameObject tempItem = Instantiate(prefabItem, transform.position + Vector3.up, Quaternion.identity);
             tempItem.GetComponent<Rigidbody2D>().AddForce(new Vector2(50, 500));
+            AudioClip sound = SoundManager.instance.soundEnemyDead;
+            SoundManager.instance.PlaySound(sound, 0.7f, 1.7f);
         }
     }
 }
