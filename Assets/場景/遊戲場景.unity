@@ -1236,6 +1236,7 @@ MonoBehaviour:
   <layerTarget>k__BackingField:
     serializedVersion: 2
     m_Bits: 0
+  stateWander: {fileID: 261586911}
 --- !u!114 &261586909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1336,6 +1337,7 @@ MonoBehaviour:
   prefabDamage: {fileID: 5632999884889584716, guid: 237cfbda92883cd4781962ebd20cd01d, type: 3}
   stateManager: {fileID: 261586907}
   stateHit: {fileID: 261586908}
+  prefabItem: {fileID: 6335225383663594836, guid: 29838af8a8dd2a54a9f8bad821365105, type: 3}
 --- !u!1 &267410901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1516,7 +1518,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314355518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23, y: -1, z: 0}
+  m_LocalPosition: {x: 4.23, y: -1.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12381,7 +12383,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648030627}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.19, y: 2.97, z: 0}
+  m_LocalPosition: {x: 29.52, y: 8.01, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15026,7 +15028,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722035242}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23, y: 2, z: -10}
+  m_LocalPosition: {x: 4.23, y: 2, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21693,7 +21695,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2056220420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23, y: 2, z: -10}
+  m_LocalPosition: {x: 4.23, y: 1.58, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
