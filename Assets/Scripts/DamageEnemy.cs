@@ -1,5 +1,6 @@
 ﻿using KID.TwoD;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace KID
 {
@@ -49,7 +50,7 @@ namespace KID
             col.enabled = false;
             rig.velocity = Vector3.zero;
             GameObject tempItem = Instantiate(prefabItem, transform.position + Vector3.up, Quaternion.identity);
-            tempItem.GetComponent<Rigidbody2D>().AddForce(new Vector2(50, 300));
+            tempItem.GetComponent<Rigidbody2D>().AddForce(new Vector2(50, 500));
         }
     }
 }
